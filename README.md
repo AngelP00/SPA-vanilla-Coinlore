@@ -1,0 +1,1 @@
+# SPA-vanilla-Coinlore
