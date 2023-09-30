@@ -46,7 +46,7 @@ Si deseas compilar la aplicación para producción, puedes utilizar el siguiente
 npm run build
 ```
 
-Este comando generará una versión optimizada de la aplicación en el directorio `build`, lista para ser implementada en un servidor web.
+Este comando generará una versión optimizada de la aplicación en el directorio `dist`, lista para ser implementada en un servidor web.
 
 ## Contribuciones
 
