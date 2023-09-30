@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+/* Estilos para el interruptor de alternancia */
+.switch {
+  position: relative;
+  display: inline-block;
+  /*
+  width: 60px;
+  height: 34px;
+  */
+  width: 42px; /*60 * 0.7*/
+  height: 23.8px; /*34 * 0.7*/
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  /*
+  height: 26px;
+  width: 26px;
+  */
+  height: 18.2px; /*26*0.7*/
+  width: 18.2px; /*26*0.7*/
+  /*left: 4px;*/
+  left: 2.8px;
+  /*bottom: 4px;*/
+  bottom: 2.8px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  /*transform: translateX(26px);*/
+  transform: translateX(18.2px);
+}
+/* Estilos para el interruptor de alternancia */
+
+/*
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #3c484e;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+*/
+
+/*
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+*/
+body.light-mode {
+  /*
+  background-color: #ffffff;
+  */
+  background-color: #e4e2e2;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  /*background-color: #f4f4f4;*/
+  color: #3c484e;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+body.dark-mode {
+  /*
+  background-color: black;
+  */
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  /*background-color: #f4f4f4;*/
+  color: white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.Header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.Header a {
+  text-decoration: none;
+  color: #15302C;
+}
+.dark-mode .Header a {
+  text-decoration: none;
+  color: white;
+}
+
+.content {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.Tikers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 6.5rem;
+  grid-row-gap: 1.5em;
+  /*
+  grid-row-gap: 0em;
+  */
+  margin: 0 auto; /* Centra horizontalmente */
+  text-align: center; /* Centra el contenido dentro de los elementos */
+}
+
+.Tikers-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  grid-row-gap: 0em;
+  margin: 0 auto; /* Centra horizontalmente */
+  text-align: center; /* Centra el contenido dentro de los elementos */
+}
+
+/*
+.Tikers-card,
+.Tikers-item {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+  border-radius: 5px;
+  margin: 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+
+  border-radius: 200px 200px 0px 0px;
+  
+  background-color: #dedede;
+  
+  
+  transition: transform 0.3s;
+}
+*/
+.Tikers-card{
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+  border-radius: 5px;
+  margin: 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+  /*border-radius: 200px 200px 0px 0px;*/
+  /*border-radius: 50px 50px 0px 0px;*/
+  border-radius: 0px 0px 0px 0px;
+  /*background-color: var(--fondo-claro);  Usar variable CSS */
+  background-color: #dedede;
+  color: var(--texto-claro); /* Usar variable CSS */
+  transition: transform 0.3s;
+}
+.dark-mode .Tikers-card {
+  /*background-color: var(--fondo-oscuro);  Usar variable CSS */
+  /*color: var(--texto-oscuro);  Usar variable CSS */
+  background-color: rgba(0, 0, 0, 0);  /*Usar variable CSS */
+  color: white;  /*Usar variable CSS */
+}
+/* Estilos para elementos .Tikers-card y .Tikers-item en modo claro */
+/*.Tikers-card,*/
+.Tikers-item {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+  border-radius: 5px;
+  margin: 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+  /*border-radius: 200px 200px 0px 0px;*/
+  /*background-color: var(--fondo-claro);  Usar variable CSS */
+  background-color: #dedede;
+  color: var(--texto-claro); /* Usar variable CSS */
+  transition: transform 0.3s;
+  /*max-width: fit-content;*/
+}
+
+/* Estilos para elementos .Tikers-card y .Tikers-item en modo oscuro */
+/*.dark-mode .Tikers-card,*/
+.dark-mode .Tikers-item {
+  /*background-color: var(--fondo-oscuro);  Usar variable CSS */
+  /*color: var(--texto-oscuro);  Usar variable CSS */
+  background-color: black;  /*Usar variable CSS */
+  color: white;  /*Usar variable CSS */
+}
+
+
+.Tikers-card:hover,
+.Tikers-item:hover {
+  transform: translateY(-5px);
+}
+
+
+/*
+.Tikers-card img,
+.Tikers-item img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 200px 200px 200px 200px;
+  
+}
+*/
+
+.character-image {
+  /*
+  width: 95%;
+  */
+  width: 95%;
+  height: auto;
+  
+  border-radius: 200px 200px 200px 200px;
+  border-width: 7px;
+
+  border-style: solid;
+  box-sizing: border-box; /* Incluye el ancho del borde en las dimensiones */
+}
+.character-image-details {
+  /*border-top: none;  Elimina el borde superior */
+
+  border-bottom-width: 7px; /* Establece el ancho del borde en la parte inferior */
+  border-bottom-style: solid; /* Establece el estilo del borde en la parte inferior */
+  border-radius: 30px; /* Establece el radio de borde en 0px o cualquier otro valor deseado */
+}
+
+.dead {
+  border-color: red; /* Cambia el color del borde a rojo para personajes muertos */
+}
+
+.alive {
+  border-color: green; /* Cambia el color del borde a verde para personajes vivos */
+}
+.unknown {
+  border-color: gray; /* Cambia el color del borde a verde para personajes vivos */
+}
+
+
+.Tikers-card h2,
+.Tikers-item h2,
+.Tikers-card h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+/*
+.Tikers-item h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+*/
+
+/*
+.Tikers-item a {
+  text-decoration: none;
+  color: #026C86;
+}
+*/
+
+.hidden {
+  display: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Main-loading {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.imagen-2560px-Rick_and_Morty {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Footer */
+.Footer-content {
+  text-align: center; /* Centra horizontalmente el contenido dentro de .Footer-content */
+}
+
+.Footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.Footer-links li {
+  display: inline; /* Coloca los elementos <li> en línea para que estén uno al lado del otro */
+  margin-right: 10px; /* Agrega un margen derecho entre los elementos <li> para separarlos */
+}
+/* Footer */
+
+/* Contact */
+.Contact-main {
+  /*background-color: #f0f0f0;*/
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.Contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Contact-content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Contact-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.Contact-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Contact-content ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces de contacto (por ejemplo, el correo electrónico y el teléfono) */
+.Contact-content a {
+  text-decoration: none;
+  color: #007bff; /* Cambia el color según tu preferencia */
+}
+
+.Contact-content a:hover {
+  text-decoration: underline;
+}
+
+/* Contact */
+
+/* About */
+.About {
+  /*max-width: 600px;*/
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  /*background-color: #f0f0f0;*/
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.About h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.About p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.About h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.About ul {
+  list-style: none;
+  padding: 0;
+}
+
+.About ul li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Estilos para los detalles de ubicación y año de fundación */
+.About p:last-child {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+/* Estilos para los enlaces (si los hubiera) */
+.About a {
+  text-decoration: none;
+  color: #007bff; /* Cambia el color según tu preferencia */
+}
+
+.About a:hover {
+  text-decoration: underline;
+}
+
+/* About */
+.btn {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: #333; /* Texto oscuro */
+  border: 2px solid #ccc; /* Borde gris */
+  border-radius: 4px; /* Bordes redondeados */
+  /*padding: 10px 20px;  Espaciado interno */
+  cursor: pointer; /* Cambio de cursor al pasar el mouse */
+  /*font-size: 16px;  Tamaño de fuente */
+}
+/* Estilos para botones seleccionados */
+.btn-selected {
+  background-color: #4CAF50; /* Fondo verde */
+  color: #ffffff; /* Texto blanco */
+  border: 2px solid #4CAF50; /* Borde verde */
+  /*border-radius: 4px;  Bordes redondeados */
+  /*padding: 0px;  Espaciado interno */
+  /*cursor: pointer;  Cambio de cursor al pasar el mouse */
+  /*font-size: 16px;  Tamaño de fuente */
+}
+
+/* Estilos para botones no seleccionados o predeterminados */
+.btn-unselected {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: #333; /* Texto oscuro */
+  border: 2px solid #ccc; /* Borde gris */
+  /*border-radius: 4px;  Bordes redondeados */
+  /*padding: 0px;  Espaciado interno */
+  /*cursor: pointer;  Cambio de cursor al pasar el mouse */
+  /*font-size: 16px;  Tamaño de fuente */
+}

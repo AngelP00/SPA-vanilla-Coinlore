@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #3c484e;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.Header a {
+  text-decoration: none;
+  color: #15302C;
+}
+
+.content {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.Characters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 6.5rem;
+  grid-row-gap: 1.5em;
+  /*
+  grid-row-gap: 0em;
+  */
+  margin: 0 auto; /* Centra horizontalmente */
+  text-align: center; /* Centra el contenido dentro de los elementos */
+}
+
+.Characters-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  grid-row-gap: 0em;
+  margin: 0 auto; /* Centra horizontalmente */
+  text-align: center; /* Centra el contenido dentro de los elementos */
+}
+
+
+.Characters-card,
+.Characters-item {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+  border-radius: 5px;
+  margin: 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.Characters-card:hover,
+.Characters-item:hover {
+  transform: translateY(-5px);
+}
+
+/*
+.Characters-card img,
+.Characters-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+*/
+
+.Characters-card h2,
+.Characters-item h2,
+.Characters-card h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+.Characters-item h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Characters-item a {
+  text-decoration: none;
+  color: #026C86;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Main-loading {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.imagen-2560px-Rick_and_Morty {
+  max-width: 100%;
+  height: auto;
+}
