@@ -14,8 +14,9 @@ const Ticker = async () => {
        
         const hash = getHash();
         console.log(hash);
-        ticker = await getData(hash);
-        ticker = ticker[0];
+        const data = await getData(hash);
+        ticker = data[0];
+        if(data.length == 0) throw new Error("There is nothing here");
         console.log('ticker',ticker.name);
         
         
@@ -33,11 +34,11 @@ const Ticker = async () => {
                 </div>
             `;
         }
-        else if (error === 'ticker not found') {
+        else if (error.message === 'There is nothing here') {
             // Mostrar un mensaje de error en HTML
             return `
                 <div class="error-message">
-                    <p>Personaje no encontrado.</p>
+                    <p>Ticker no encontrado.</p>
                 </div>
             `;
         } else {
