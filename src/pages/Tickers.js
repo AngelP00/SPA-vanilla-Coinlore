@@ -56,6 +56,7 @@ const Tikers = async () => { // Agregamos el parámetro "page" con un valor pred
                     </article>
                 `).join('')}
             </div>
+            ${getPaginator(0,currentPage,maxPag)}
         `;
     } catch (error) {
         console.log('a');

@@ -17,7 +17,7 @@ const Ticker = async () => {
         const data = await getData(hash);
         ticker = data[0];
         if(data.length == 0) throw new Error("There is nothing here");
-        console.log('ticker',ticker.name);
+        console.log('ticker.name',ticker.name);
         
         
     } catch (error) {
