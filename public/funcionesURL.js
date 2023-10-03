@@ -141,13 +141,10 @@ function nextPage() {
     const limit = Math.min(limitFromHash || 100, 100) || 100; //si limitFromHash es 0 entonces el limite que usa es 100
 
     let currentPage = Math.ceil(getValorDeUnParametroDelHash('start')/limit);
-    console.log('nextPage b');
     currentPage++;
+    console.log('currentPage',currentPage);
+    console.log('limit',limit);
     setValorDeUnParametroDelHash('start',currentPage*limit);
-    
-    //actualizarNumeroDePagina(currentPage);
-    
-    // Aquí puedes agregar lógica adicional para cargar los datos de la siguiente página
 }
 
 // Función para retroceder a la página anterior
@@ -164,9 +161,6 @@ function prevPage() {
         // Aquí puedes agregar lógica adicional para cargar los datos de la página anterior
     }
 }
-
-
-//buscador
 
 const body = document.body;
 body.classList.add("light-mode");

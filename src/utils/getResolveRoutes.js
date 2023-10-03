@@ -1,31 +1,8 @@
-const resolveRoutes = (route) => {
-    /*
-    if (route.length <= 100) {
-        let validRoute = route === '/' ? route : '/character/id';
-        return validRoute;
-    }
-    */
-    
+const resolveRoutes = (route) => {    
     const parts = route.split('/');
+    console.log('route',route);
 
-    //route = `/${parts[1]}`;
-    //console.log('route a=',route);
-    //console.log('route.indexOf(?)=',route.indexOf('?'));
-    /*
-    if(route.includes('/location/')){
-        console.log('/location');
-        return '/location';
-    }
-    else
-    */
-    //if (route.indexOf('?')!== -1) {// si encuentra el '?'
-    //if (route.includes('/character/?page')) {
-    if (route === '/home') {
-        //console.log('/');
-        return '/';
-    }
-    else if (route === '/') {
-        //console.log('/');
+    if (route === '/home' || (route === '/')) {
         return '/';
     }
     else if (route === '/about') {
@@ -34,9 +11,7 @@ const resolveRoutes = (route) => {
     else if (route === '/contact') {
         return '/contact';
     }
-    //else if (route.includes('/character/?')) {
     else if (route.includes('/tickers/?')) {
-        console.log('/filtercharacters/:parametros')
         return '/tickers/:parametros';
     }
     else if(route.includes('/ticker/')){
